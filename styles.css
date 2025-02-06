@@ -1,0 +1,827 @@
+/* ==== Fontes Personalizadas ==== */
+@font-face {
+    font-family: 'Larsseit';
+    src: url('fonts/Larsseit-Regular.woff2') format('woff2'),
+         url('fonts/Larsseit-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Barnet Sans';
+    src: url('fonts/BarnetSans-Regular.woff2') format('woff2'),
+         url('fonts/BarnetSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ==== Variáveis Globais ==== */
+:root {
+    --vermelho: #E50201;
+    --amarelo: #E5DF00;
+    --rosa: #E51C78;
+    --azul: #2411E5;
+    --azul-claro: #47DEE5;
+    --verde: #08E522;
+    --fonte-principal: 'Larsseit', sans-serif;
+    --fonte-secundaria: 'Barnet Sans', sans-serif;
+}
+
+/* ==== Estilos Globais ==== */
+body {
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+}
+
+/* ==== Fundo da Página ==== */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('imagens/1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* fundo atrás de todo o conteúdo */
+}
+
+
+/* ==== Ajuste no Conteúdo Principal ==== */
+#content {
+    position: relative; 
+    z-index: 1; /* conteúdo na frente do fundo */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: right;
+}
+
+
+/* ==== Cabeçalho ==== */
+header {
+    margin-right: 25px;
+    text-align: right;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: var(--fonte-secundaria);
+}
+
+/* ==== Título  ==== */
+h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--amarelo);
+    width: 0;
+    max-width: fit-content;
+    font-size: 2.5em;
+    animation: typing 3s steps(30, end) forwards, blink 0.6s infinite;
+    font: var(--fonte-secundaria)
+}
+
+/* Animação de Digitação */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 50%; } 
+}
+
+/* Animação do Cursor */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Responsividade para o titulo */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;  
+        animation: typing 2.5s steps(20, end) forwards, blink 0.6s infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 80%; } 
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em; 
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; } 
+    }
+}
+
+/* ==== Título Mochakk ==== */
+h2 {
+    text-align: left;
+    font-size: 5em;
+    margin: 0;
+    word-wrap: break-word;
+}
+
+/* ==== Título Mochakk Responsivo ==== */
+@media (max-width: 1024px) {
+    h2 {
+        font-size: 6em;
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2em;
+    }
+}
+
+
+/* ==== Descrição "Quem é Mochakk" ==== */
+#quemEMock {
+    text-align: left;
+    margin: 30px 0 30px 0; 
+    width: 90%;
+    max-width: 300px;
+    word-wrap: break-word;
+    font-size: 1.2em;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    #quemEMock {
+        width: 95%; 
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #quemEMock {
+        width: 100%; 
+        font-size: 1em;
+    }
+}
+
+
+/* ==== Animação para a Imagem ==== */
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#mock {
+    opacity: 0;
+    animation: slideInFromRight 2s forwards;
+    max-width: 30%; 
+    height: 250px;
+    object-fit: contain;
+    position: absolute;
+    right: 5%; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Responsividade para Tablets */
+@media (max-width: 768px) {
+    #mock {
+        max-width: 40%; 
+        height: 200px;
+        right: 2%;
+    }
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 480px) {
+    #mock {
+        position: relative; 
+        max-width: 50%; 
+        height: 180px; 
+        margin: 20px auto;
+        display: block;
+        top: unset;
+        transform: none;
+        right: unset;
+    }
+}
+
+
+/* ==== ============================================================================================================ ==== */
+
+
+/* ==== Menu de Navegação ==== */
+/* ==== Reset ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* ==== Estilização Global ==== */
+body {
+    font-family: var(--fonte-principal);
+}
+
+/* ==== Menu de Navegação ==== */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Alinha à direita em telas grandes */
+    padding: 20px;
+}
+
+/* ==== Itens do Menu ==== */
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    font-size: 20px;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #E5DF00;
+    transform: scale(1.05);
+}
+
+/* ==== Responsividade ==== */
+@media (max-width: 768px) {
+    nav {
+        justify-content: center; /* Centraliza o menu em telas menores */
+    }
+}
+
+
+
+/* ==== =============================================================== ==== */
+
+/* === PAGINA NOVIDADES === */
+
+/* === Estilização geral === */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('imagens/novidades4.png') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* === Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* === Estilização Global === */
+body {
+    font-family: var(--fonte-principal);
+}
+
+/* === Menu de Navegação === */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: right; 
+    padding: 20px;
+}
+
+
+/* === Itens do Menu === */
+nav ul {
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    font-size: 20px;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #E5DF00;
+    transform: scale(1.05);
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    nav {
+        justify-content: center; 
+    }
+}
+
+/* === Seção de novidades === */
+#novidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+
+article {
+    background: transparent;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+
+article:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+}
+
+article img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px; /* Remover para playlist */
+    display: block;
+    margin: 0 auto;
+}
+
+article h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+article p {
+    font-size: 15px;
+    color: black;
+    padding: 20px;
+}
+
+article a {
+    display: block;
+    background: var(--azul-claro);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+article a:hover {
+    background: #E5DF00;
+}
+
+
+/* === edição do lorem da pagina no inicio e que eu esqueci disso  === */ 
+#p1-novidades {
+    font-size: 15px;
+    font-family: var(--fonte-secundaria);
+    font-weight: normal;
+    text-align: center;
+    width: 90%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+
+/* === Rodapé === */
+footer {
+    text-align: center;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+/* === edição do lorem da pagina no final da pg === */ 
+#p2-novidades {
+    font-size: 15px;
+    font-family: var(--fonte-secundaria); 
+    text-align: center;
+    width: 90%; 
+    max-width: 600px; 
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#h3-novidades{
+    font-size: 25px;
+    font-family: var(--fonte-principal); 
+    text-align: center;
+    max-width: 600px; 
+    margin: 0 auto;
+
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+/* === forum === */
+.forum-container {
+    width: 80%; 
+    max-width: 600px; 
+    padding: 20px; 
+    background: none; 
+    border: none; 
+    box-shadow: none;
+    margin: 0 auto; 
+}
+
+
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none; 
+    resize: none;
+    margin-bottom: 10px;
+    background: transparent; 
+    color: #000000;
+    outline: none; 
+}
+
+
+button {
+    width: 100%;
+    background-color:var(--rosa);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: var(--amarelo);
+}
+
+#comments-section {
+    margin-top: 20px;
+}
+
+#comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+#comment-list li {
+  
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#titulo-comentarios {
+    font-size: 15px;
+    text-align: center; /* Centraliza o título */
+    color: var(--rosa);
+    font-weight: bold; /* Destaca o título */
+    margin-bottom: 8px; /* Espaço abaixo do título */
+}
+
+
+/* ==== =============================================================== ==== */
+
+/* ==== ================= playlist ================== ==== */
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 10px;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto; /* centraliza no centro da tela */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* quebra a linha quando necessário */
+}
+
+.playlist {
+    text-align: center;
+}
+
+.playlist a {
+    text-decoration: none;
+    color: black;
+}
+
+.playlist img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.playlist img:hover {
+    transform: scale(1.1);
+}
+
+.playlist p {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* === edição do lorem da pagina no inicio === */ 
+#p1-musicas {
+    font-size: 15px;
+    font-family: var(--fonte-secundaria);
+    font-weight: normal;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 600px) {
+    .row {
+        flex-direction: column; /* força colocar os itens um abaixo do outro */
+        align-items: center;
+    }
+}
+/* ==== ============================================================================================================ ==== */
+/* ==== ================================= tela de login ===================================== ==== */
+
+
+/* Resetando a formatação global */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    color: black; /* Mudando a cor do texto para preto */
+}
+
+/* Container principal de cadastro */
+#cadastro-page #main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+#login-page #navigation ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+#login-page #navigation ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* container de login */
+#login-page #login-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#login-page .login-container {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    background-color: transparent;
+}
+
+
+
+
+#login-page h2 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/*campos de input */
+#login-page .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#login-page .input-group label {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#login-page .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+#login-page .input-group input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* botão de login */
+#login-page button {
+    width: 100%;
+    padding: 10px;
+    background: #E5DF00;;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#login-page button:hover {
+    background:#2411E5;
+}
+
+
+
+
+/* botão de cadastro */
+#login-page .register-btn {
+    width: 100%;
+    padding: 10px;
+    background: #E5DF00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+#login-page .register-btn:hover {
+    background: #2411E5;
+}
+
+/* mensagem de erro */
+#login-page #error-message {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #E50201;
+}
+
+
+
+
+
+/* ==== ================================= cadastro ===================================== ==== */
+/* Resetando a formatação global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal */
+#cadastro-page #main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* ----------------------------------------------------- */
+
+
+/* container de cadastro */
+#cadastro-page #cadastro-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#cadastro-page .cadastro-container {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    background-color: transparent;
+}
+
+#cadastro-page h2 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* campos de input */
+#cadastro-page .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#cadastro-page .input-group label {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#cadastro-page .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(0, 0, 0);
+    outline: none;
+}
+
+#cadastro-page .input-group input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}                                     
+
+
+
+
+
+
+
+
+
+/* botão de cadastro */
+#cadastro-page button {
+    width: 100%;
+    padding: 10px;
+    background: #E5DF00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#cadastro-page button:hover {
+    background: #2411E5;
+}
+
+/* mensagem de erro */
+#cadastro-page #error-message {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #E50201;
+}
